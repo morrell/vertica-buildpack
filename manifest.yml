@@ -1,0 +1,3 @@
+default_versions:
+- name: verticaodbc
+  version: 9.1.1
