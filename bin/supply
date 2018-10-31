@@ -1,13 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
 BUILD_DIR=$1
 CACHE_DIR=$2
 DEPS_DIR=$3
 DEPS_IDX=$4
-
-VERTICA_URL=https://www.vertica.com/client_drivers/9.1.x/9.1.1-0/vertica-client-9.1.1-0.x86_64.tar.gz
-VERTICA_PKG=vertica-client-9.1.1-0.x86_64.tar.gz
 
 export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
 
@@ -17,4 +14,3 @@ mkdir $DEPS_DIR/$DEPS_IDX/vertica
 tar vzxf $DEPS_DIR/$DEPS_IDX/$VERTICA_PKG -C $DEPS_DIR/$DEPS_IDX/vertica && rm $DEPS_DIR/$DEPS_IDX/$VERTICA_PKG
 
 echo "-----> Adding config.yml to $DEPS_DIR/$DEPS_IDX"
-cp $BUILDPACK_DIR/config.yml $DEPS_DIR/$DEPS_IDX/config.yml
