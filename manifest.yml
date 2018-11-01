@@ -1,0 +1,12 @@
+---
+language: vertica
+default_versions:
+- name: vertica
+  version: 1.0.x
+dependencies: []
+include_files:
+  - README.md
+  - VERSION
+  - bin/detect
+  - bin/supply
+  - manifest.yml

@@ -1,0 +1,8 @@
+version: '3'
+services:
+  builder:
+    build: ./
+    entrypoint: "/bin/bash -c"
+    command: ["buildpack-packager build -cached -any-stack"]
+    volumes:
+      - ./:/go/src/app
